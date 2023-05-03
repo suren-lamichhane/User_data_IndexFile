@@ -1,0 +1,9 @@
+#!/bin/bash
+sudo apt-get update -y && sudo apt-get upgrade -y && sudo apt-get autoremove -y
+sudo apt-get install -y apache2
+sudo apt-get install -y php
+cd /var/www/html
+sudo rm -rf index.html
+sudo git clone https://github.com/VtechRoShan/User_data_IndexFile.git
+sudo mv User_data_IndexFile/index.php .
+sudo rm -rf  User_data_IndexFile
