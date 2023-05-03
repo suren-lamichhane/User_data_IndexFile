@@ -28,8 +28,10 @@
             <hr>
             <?php
                $instance_id = file_get_contents('http://169.254.169.254/latest/meta-data/instance-id');
+               $instance_name = file_get_contents('http://169.254.169.254/latest/meta-data/tags/instance/Name');
                ?>
             <h5> <strong> <?php echo "instance-id:" . $instance_id; ?> </strong> </h5>
+            <h5> <strong> <?php echo "instance-Name:" . $instance_name; ?> </strong> </h5>
             <hr>
             <ol class="breadcrumb">
                <li><a href="#">Home</a></li>
