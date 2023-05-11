@@ -44,7 +44,7 @@
             
             <?php
 $servername = "localhost";
-$username = "root";
+$username = "imroshan";
 $password = "password";
 $database = "task_ansible"
 
