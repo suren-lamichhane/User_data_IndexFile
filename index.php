@@ -40,24 +40,7 @@
             </ol>
          </header>
          <div class="page-heading">
-            <h1>Eat Sleep Code Repeat
-            
-            <?php
-$servername = "localhost";
-$username = "imroshan";
-$password = "password";
-$database = "task_ansible"
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
-echo "Connected successfully";
-?>
-            
+            <h1>Eat Sleep Code Repeat            
             </h1>
          </div>
          <div class="row">
