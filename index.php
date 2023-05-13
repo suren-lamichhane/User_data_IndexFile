@@ -50,9 +50,16 @@
                   <li class="active">
                      <a href="#">Level 2</a>
                      <ul>
-                        <li><a href="#">Level 3</a></li>
-                        <li><a href="#">Level 3</a></li>
-                        <li><a href="#">Level 3</a></li>
+                        <li><a href="#">This</a></li>
+                        <li><a href="#"> Page Has Been Visited</a></li>
+                        <li><a href="#">
+                           <script>
+                              var visitorCount = localStorage.getItem('visitorCount') || 1;
+                              visitorCount++;
+                              localStorage.setItem('visitorCount', visitorCount);
+                              document.write('You are visitor number ' + visitorCount + '.');                           
+                           </script>
+                           </a></li>
                      </ul>
                   </li>
                   <li><a href="#">Level 2</a></li>
