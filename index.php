@@ -34,9 +34,18 @@
             <h5> <strong> <?php echo "instance-Name:" . $instance_name; ?> </strong> </h5>
             <hr>
             <ol class="breadcrumb">
-               <li><a href="#">Home</a></li>
-               <li><a href="#">Level 1</a></li>
-               <li class="active">Level 2</li>
+               <li><a href="#">This</a></li>
+               <li><a href="#"> Page Has Been Visited</a></li>
+               <li>
+                  <a href="#"  class= "active" >
+                     <script>
+                        var visitorCount = localStorage.getItem('visitorCount') || 1;
+                        visitorCount++;
+                        localStorage.setItem('visitorCount', visitorCount);
+                        document.write('You are visitor number ' + visitorCount + '.');                           
+                     </script>
+                  </a>
+               </li>
             </ol>
          </header>
          <div class="page-heading">
@@ -49,18 +58,6 @@
                   <li><a href="#">Level 2</a></li>
                   <li class="active">
                      <a href="#">Level 2</a>
-                     <ul>
-                        <li><a href="#">This</a></li>
-                        <li><a href="#"> Page Has Been Visited</a></li>
-                        <li><a href="#">
-                           <script>
-                              var visitorCount = localStorage.getItem('visitorCount') || 1;
-                              visitorCount++;
-                              localStorage.setItem('visitorCount', visitorCount);
-                              document.write('You are visitor number ' + visitorCount + '.');                           
-                           </script>
-                           </a></li>
-                     </ul>
                   </li>
                   <li><a href="#">Level 2</a></li>
                </ul>
@@ -78,7 +75,11 @@
                </div>
             </div>
             <div class="col-sm-3">
-               <h2> ><_><</h2>
+               <h2>
+                  >
+                  <_>
+                  <
+               </h2>
                <br> <br>
                <h2>Happy Learning</h2>
             </div>
