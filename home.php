@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "imroshan", "password", "task_ansible");
+$conn = mysqli_connect("localhost", "suren", "suren123", "my_db");
 
 // Check connection
 if (!$conn) {
