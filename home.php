@@ -47,7 +47,7 @@ if (mysqli_query($conn, $sql)) { ?>
     $username = $_POST["username"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
-
+}
     // Prepare SQL statement
     $sql_insert = "INSERT INTO guestbook (username, email, phone) VALUES ('$username', '$email', '$phone')";
     if (mysqli_query($conn, $sql_insert)) {
