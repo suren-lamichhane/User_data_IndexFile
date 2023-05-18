@@ -31,7 +31,7 @@ if (mysqli_query($conn, $sql)) { ?>
 
 <form action="" method="post">
 
-<form method="post" action="create.php">
+<form method="post" action="home.php">
   <label for="name">Name:</label>
   <input type="text" name="username" id="name" required>
 
@@ -44,7 +44,7 @@ if (mysqli_query($conn, $sql)) { ?>
   <input type="submit" name="submit" value="submit">
 </form>
 <?php if (isset($_POST["submit"])) {
-    $username = $_POST["name"];
+    $username = $_POST["username"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
 
@@ -75,4 +75,3 @@ if (mysqli_query($conn, $sql)) { ?>
     }
     echo "</table>";
 }}
-?>
