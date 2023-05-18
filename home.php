@@ -9,8 +9,7 @@ if (!$conn) {
 }
 echo "<br>";
 
-#create table if not exist
-
+// Create table if not exist
 $sql = "CREATE TABLE IF NOT EXISTS guestbook (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   username VARCHAR(255) NOT NULL,
@@ -21,17 +20,15 @@ $sql = "CREATE TABLE IF NOT EXISTS guestbook (
 
 $table_creation = mysqli_query($conn, $sql);
 
-if (mysqli_query($conn, $sql)) {
+if ($table_creation) {
     echo "Table created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }
 
-if (mysqli_query($conn, $sql)) { ?>
+?>
 
 <form action="" method="post">
-
-<form method="post" action="home.php">
   <label for="name">Name:</label>
   <input type="text" name="username" id="name" required>
 
@@ -39,21 +36,23 @@ if (mysqli_query($conn, $sql)) { ?>
   <input type="email" name="email" id="email" required>
 
   <label for="message">Phone:</label>
-  <input type="phone" name="phone" id="phone" required>
+  <input type="text" name="phone" id="phone" required>
 
-  <input type="submit" name="submit" value="submit">
+  <input type="submit" name="submit" value="Submit">
 </form>
-<?php if (isset($_POST["submit"])) {
+
+<?php
+if (isset($_POST["submit"])) {
     $username = $_POST["username"];
     $email = $_POST["email"];
     $phone = $_POST["phone"];
-}
+
     // Prepare SQL statement
     $sql_insert = "INSERT INTO guestbook (username, email, phone) VALUES ('$username', '$email', '$phone')";
     if (mysqli_query($conn, $sql_insert)) {
         echo "New record created successfully";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+        echo "Error: " . $sql_insert . "<br>" . mysqli_error($conn);
     }
 
     // Prepare SQL statement
@@ -64,7 +63,7 @@ if (mysqli_query($conn, $sql)) { ?>
 
     // Display records in a table
     echo "<table>";
-    echo "<tr><th>Name</th><th>Email</th><th>Message</th><th>Created At</th></tr>";
+    echo "<tr><th>Name</th><th>Email</th><th>Phone</th><th>Created At</th></tr>";
     while ($row = mysqli_fetch_assoc($result)) {
         echo "<tr>";
         echo "<td>" . $row["username"] . "</td>";
@@ -74,4 +73,8 @@ if (mysqli_query($conn, $sql)) { ?>
         echo "</tr>";
     }
     echo "</table>";
-}}
+}
+
+mysqli_close($conn);
+?>
+
